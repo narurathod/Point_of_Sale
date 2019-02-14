@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>point of sale</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- css files -->
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+   <style>
+       body,html{
+           margin:0px;
+           padding:0px;
+           margin-top:-10px;
+       }
+       .btn{
+           margin: 5px;
+           height: 57px;
+           width: 80px;
+           border: none;
+
+       }
+       .btn:hover{
+          
+           background-color:none;
+           
+       }
+       .btn-height button{
+           height: 45px;
+       }
+       .row1 button{
+           background-color: orange;
+           font-size: 10px;
+       }
+       .row2 button{
+           background-color:rgb(7, 168, 221);
+           font-size: 10px;
+       }
+       .row3 button{
+           background-color:gray;
+           font-size: 10px;
+       }
+       .row4 button{
+           background-color:gray;
+           font-size: 10px;
+       }
+       .row5 button{
+           background-color:gray;
+           font-size: 10px;
+       }
+       .row6 button{
+           background-color: rgb(230, 229, 228);
+           color: black;
+           border-radius: 0px;
+           font-size: 25px;
+           font-weight: 700;
+       }
+       .row7 button{
+           background-color: rgb(230, 229, 228);
+           color: black;
+           border-radius: 0px;
+           font-size: 25px;
+           font-weight: 700;
+       }
+       .row8 button{
+           background-color:rgb(230, 229, 228);
+           color: black;
+           border-radius: 0px;
+           font-size: 25px;
+           font-weight: 700;
+       }
+       .row9 button{
+           background-color:rgb(230, 229, 228);
+           color: black;
+           border-radius: 0px;
+           font-size: 25px;
+           font-weight: 700;
+       }
+       .row10 button{
+           background-color:gray;
+           font-size: 10px;
+       }
+       .row11 input{
+        width:695px;
+        margin-left:55px;
+        margin-top:80px;
+        height:30px;
+       }
+       .row13{
+        width:730px;
+        margin-left:35px;
+        margin-top:45px;
+        height:200px;
+        border: 1px solid rgb(161, 159, 159);
+       }
+     
+       img{
+           margin-left:70px;
+           margin-bottom:-100px;
+
+       }
+       .nar span{
+           border: 1px solid black;
+           border-radius: 2px;
+           background-color: rgb(207, 205, 205);
+           font-weight: 600;
+       }
+       .nar{
+           margin-left:35px;
+           margin-top:10px;
+           margin-bottom:-45px;
+       }
+       .naru span{
+           border: 1px solid black;
+           border-radius: 1px;
+           background-color: rgb(241, 241, 241);
+           
+       }
+       .naru{
+           margin-left:35px;
+           margin-top:-200px;
+           margin-bottom:45px;
+       }
+   table, th, thead{
+       border: 1px solid black;
+       padding: 0px 20px;
+       font-size: 15px;
+   }
+   table{
+       margin-left:40px;
+       margin-top:5px;
+   }
+  table thead{
+       background-color: rgb(218, 216, 216);
+     
+   }
+   tbody{
+       font-weight: 400;
+   }
+   .divtag{
+    width:100%;
+    height:200px; 
+    overflow-y: scroll; 
+   
+   
+   }
+/* .emptyfield{
+    border:1px solid black;
+    height:400px;
+    weight:700px;
+    margin-left: 80px;
+    margin-top:50px;
+} */
+       
+   </style>
+</head>
+<body> 
+    <img src="chauli logo.png">
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="row row11">
+                <input type="text" name="product" >
+            </div>
+            
+                  <!-- <div class="row nar">
+                      <span style="padding-right:150px; padding-left:10px;">ITEM</span>
+                      <span style="padding-right:10px; padding-left:10px;">-</span>
+                      <span style="padding-right:10px; padding-left:10px;">QTY</span>
+                      <span style="padding-right:10px; padding-left:10px;">+</span>
+                      <span style="padding-right:10px; padding-left:10px;">UNIT PRICE</span>
+                      <span style="padding-right:10px; padding-left:10px;">AMT</span>
+                      <span style="padding-right:10px; padding-left:10px;">DISC %</span>
+                      <span style="padding-right:10px; padding-left:10px;">LOCATION</span>
+                      <span style="padding-right:70px; padding-left:10px;"></span>
+                     
+                   </div>
+            <div class="row row13">
+                 
+
+            </div>
+            <div class="row naru" >
+                    <span style="padding-right:150px; padding-left:12px;">chair</span>
+                    <span style="padding-right:10px; padding-left:11px;" onclick="decrement()">-</span>
+                    <span style="padding-right:10px; padding-left:21px;" id="inc">05</span>
+                    <span style="padding-right:10px; padding-left:11px;" onclick="increment()">+</span>
+                    <span style="padding-right:10px; padding-left:59px;" id="price">300</span>
+                    <span style="padding-right:10px; padding-left:10px;" id="amount" onclick="totalamt()">600$</span>
+                    <span style="padding-right:10px; padding-left:32px;">10%</span>
+                    <span style="padding-right:5px; padding-left:1px;">mangdewadi</span>
+                    <span style="padding-right:70px; padding-left:11px;"></span>
+                   
+                </div> -->
+           <!-- <div class="emptyfield"></div> -->
+           <div class="divtag">
+            <table>
+                <thead>
+                    <th>ITEM</th>
+                    <th>-</th>
+                    <th>QTY</th>
+                    <th>+</th>
+                    <th>UNIT PRICE</th>
+                    <th>AMT</th>
+                    <th>DISC %</th>
+                    <th>LOCATION</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>chair</th>
+                        <th>-</th>
+                        <th>3</th>
+                        <th>+</th>
+                        <th>300</th>
+                        <th>900</th>
+                        <th>10%</th>
+                        <th>katraj</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                            <th>chair</th>
+                            <th>-</th>
+                            <th>3</th>
+                            <th>+</th>
+                            <th>300</th>
+                            <th>900</th>
+                            <th>10%</th>
+                            <th>katraj</th>
+                            <th></th>
+                    </tr>
+                    <tr>
+                        <th>chair</th>
+                        <th>-</th>
+                        <th>3</th>
+                        <th>+</th>
+                        <th>300</th>
+                        <th>900</th>
+                        <th>10%</th>
+                        <th>katraj</th>
+                        <th></th>
+                </tr>
+                <tr>
+                    <th>chair</th>
+                    <th>-</th>
+                    <th>3</th>
+                    <th>+</th>
+                    <th>300</th>
+                    <th>900</th>
+                    <th>10%</th>
+                    <th>katraj</th>
+                    <th></th>
+            </tr>
+            <tr>
+                <th>chair</th>
+                <th>-</th>
+                <th>3</th>
+                <th>+</th>
+                <th>300</th>
+                <th>900</th>
+                <th>10%</th>
+                <th>katraj</th>
+                <th></th>
+        </tr>
+        <tr>
+            <th>chair</th>
+            <th>-</th>
+            <th>3</th>
+            <th>+</th>
+            <th>300</th>
+            <th>900</th>
+            <th>10%</th>
+            <th>katraj</th>
+            <th></th>
+    </tr>
+    <tr>
+        <th>chair</th>
+        <th>-</th>
+        <th>3</th>
+        <th>+</th>
+        <th>300</th>
+        <th>900</th>
+        <th>10%</th>
+        <th>katraj</th>
+        <th></th>
+</tr>
+<tr>
+    <th>chair</th>
+    <th>-</th>
+    <th>3</th>
+    <th>+</th>
+    <th>300</th>
+    <th>900</th>
+    <th>10%</th>
+    <th>katraj</th>
+    <th></th>
+</tr>
+<tr>
+    <th>chair</th>
+    <th>-</th>
+    <th>3</th>
+    <th>+</th>
+    <th>300</th>
+    <th>900</th>
+    <th>10%</th>
+    <th>katraj</th>
+    <th></th>
+</tr>
+<tr>
+    <th>chair</th>
+    <th>-</th>
+    <th>3</th>
+    <th>+</th>
+    <th>300</th>
+    <th>900</th>
+    <th>10%</th>
+    <th>katraj</th>
+    <th></th>
+</tr>
+            
+                    
+                </tbody>
+            </table>
+           </div>
+           
+              <div class="container">
+                    <div class="row" style="margin-top:80px; position:relative;">
+                            <div class="col-md-2 offset-md-6">
+                            <p>Sub Total</p>
+                            <p>Tax</p>
+                            <p><b>Total</b></p>
+                            <p><b>Payment</b></p>
+                            <p><b>Balance</b></p>
+                            </div>
+                                <div class="col-md-1 offset-md-3">
+                                        <p>$0.00</p>
+                                        <p>$0.00</p>
+                                        <p><b>$0.00</b></p>
+                                        <p><b>$0.00</b></p>
+                                        <p><b>$0.00</b></p>   
+                                </div>
+                    </div>
+             </div>
+
+</div>
+        <div class="col-md-5">
+            <div class="row row1">
+                <button class="btn btn-primary" type="submit" style="width:169px; font-size: 20px;">START SALE</button> 
+               
+                <button class="btn btn-primary " type="submit">SUSPEND<br>Sale</button> 
+                <button class="btn btn-primary " type="submit">RETRIEVE<br>Sale</button> 
+                <button class="btn btn-primary " type="submit">CANCEL<br>Sale<br>ctrl+F9</button> 
+                </div>
+                <div class="row row2">
+                        <button class="btn btn-primary " type="submit">Swivel <br>Chair</button> 
+                        <button class="btn btn-primary  " type="submit">Donation</button> 
+                        <button class="btn btn-primary  " type="submit">Guest Chair</button> 
+                        <button class="btn btn-primary  " type="submit">Gas Chair<br>Broiler</button> 
+                        <button class="btn btn-primary " type="submit">MORE...</button> 
+                        </div>
+                        <div class="row row3">
+                                <button class="btn btn-primary " type="submit">Change<br>Quantity</button> 
+                                <button class="btn btn-primary " type="submit">Change<br>Unit Price</button> 
+                                <button class="btn btn-primary " type="submit">Change<br>Amt</button> 
+                                <button class="btn btn-primary " type="submit">Enter<br>Disc.%</button> 
+                                <button class="btn btn-primary " type="submit">Void<br>Line F4</button> 
+                                </div>
+                                <div class="row row4">
+                                        <button class="btn btn-primary " type="submit">Start <br>Return</button> 
+                                        <button class="btn btn-primary " type="submit">Enter <br>Serial#</button> 
+                                        <button class="btn btn-primary " type="submit">Enter<br>Reason</button> 
+                                       
+                                        </div>
+                                        <div class="row row5">
+                                                <button class="btn btn-primary " type="submit">Returns</button> 
+                                                <button class="btn btn-primary " type="submit">Manage <br> Order</button> 
+                                                <button class="btn btn-primary  " type="submit">Select <br>Customer</button> 
+                                                <button class="btn btn-primary  " type="submit">Customer <br>Address</button> 
+                                                
+                                                </div>
+                                               
+                                               
+                                            <div class="btn-height">
+                               
+                                                <div class="row row6">
+                                                        <button class="btn btn-primary " type="submit" ><i class="fas fa-long-arrow-alt-left"></i></button> 
+                                                        <button class="btn btn-primary  " type="submit">7</button> 
+                                                        <button class="btn btn-primary  " type="submit">8</button> 
+                                                        <button class="btn btn-primary  " type="submit">9</button> 
+                                                        <button class="btn btn-primary " type="submit" style="height:95px; font-size: 50px;">*</button>
+                                                        </div>
+                                                      
+                                                                
+                                                      
+                                                        <div class="row row7" style="margin-top:-50px;">
+                                                                <button class="btn btn-primary " type="submit">/</button> 
+                                                                <button class="btn btn-primary " type="submit">4</button> 
+                                                                <button class="btn btn-primary " type="submit">5</button> 
+                                                                <button class="btn btn-primary " type="submit">6</button> 
+                                                               
+                                                                </div>
+                                                                <div class="row row8">
+                                                                        <button class="btn btn-primary " type="submit">-</button> 
+                                                                        <button class="btn btn-primary " type="submit">1</button> 
+                                                                        <button class="btn btn-primary " type="submit">2</button> 
+                                                                        <button class="btn btn-primary " type="submit">3</button> 
+                                                                        <button class="btn btn-primary " type="submit" style="height:95px; font-size: 40px;"><i class="fas fa-arrow-circle-left"></i></button>
+                                                                        </div>
+                                                                        <div class="row row9" style="margin-top:-50px;">
+                                                                                <button class="btn btn-primary " type="submit">+</button> 
+                                                                                <button class="btn btn-primary " type="submit" style="width:169px;">0</button> 
+                                                                                
+                                                                                <button class="btn btn-primary  " type="submit">.</button> 
+                                                                               
+                                                                                </div>  
+                                                                                
+                                                                    </div>
+                                                                                <div class="row row10">
+                                                                                        <button class="btn btn-primary " type="submit" style="font-size:10px;">LOG OUT</button> 
+                                                                                        <button class="btn btn-primary " type="submit">Cashiers<br>  Operation</button> 
+                                                                                        <button class="btn btn-primary  " type="submit" >Gift Card<br> Operation</button> 
+                                                                                        <button class="btn btn-primary  " type="submit" style="width:169px; background-color: orange; font-size:15px;">PAY <br> F9</button> 
+                                                                                        
+                                                                                        </div>                                      
+                                           
+
+
+        </div>
+
+
+    </div>
+    </div>
+    <!-- javascript files from bootstrap -->
+    <script>
+     var count=0;
+
+        function increment(){  
+            count++;
+       
+    document.getElementById("inc").innerHTML=count;
+ 
+ } 
+ 
+ function decrement(){
+     count--;
+     document.getElementById("inc").innerHTML=count;
+ }
+  var unitprice = document.getElementById("price").innerHTML;
+  var qt= document.getElementById("inc").innerHTML;
+   var amt=unitprice*qt;
+   function totalamt(){
+       document.getElementById("amount").innerHTML=amt;
+   }
+     var productrow=document.getElementsByClassName("naru").innerHTML;
+     document.getElementById("naru2").innerHTML=productrow;
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>  
+    </body>
+    </html>
+        
